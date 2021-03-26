@@ -529,8 +529,7 @@ footer {
     opacity: 1;
   }
 }
-
-.confirmation {
+bground .confirmation {
   width: 414px;
   height: 657px;
 }
@@ -541,5 +540,19 @@ div.modal-body {
   align-items: center;
   justify-items: center;
 }
-p.text-valid {
+/* p.text-valid {
+} */
+.modal_confirmation {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+}
+small {
+  font-size: small;
 }

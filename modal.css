@@ -556,3 +556,19 @@ div.modal-body {
 small {
   font-size: small;
 }
+@media screen and (min-width: 320px) {
+  .hero-headline {
+    font-size: 1.8rem;
+  }
+  .hero-text {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 375px) {
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+  .hero-text {
+    width: 81%;
+  }
+}

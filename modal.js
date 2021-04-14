@@ -1,4 +1,4 @@
-// DOM Elements
+// variables Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
@@ -52,7 +52,6 @@ form.addEventListener("submit", function (e) {
   ) {
     launchModalConf();
   } else if (!checkLocation()) {
-    alert("merci de selectioné une location ");
   }
 });
 
@@ -67,12 +66,12 @@ form.first.addEventListener("change", function () {
  */
 const validFirst = function (inputPrenom) {
   const small = inputPrenom.nextElementSibling;
-  if (inputPrenom.value.length < 2) {
+  if (inputPrenom.value.trim().length < 2) {
     small.innerHTML = "Veuillez entrer 2 caractères ou plus";
     small.style.color = "red";
     return false;
   } else {
-    small.innerHTML = "prenom valide";
+    small.innerHTML = "Prenom valide";
     small.style.color = "green";
     return true;
   }
@@ -89,12 +88,12 @@ form.last.addEventListener("change", function () {
  */
 const validLast = function (inputNom) {
   const small = inputNom.nextElementSibling;
-  if (inputNom.value.length < 2) {
+  if (inputNom.value.trim().length < 2) {
     small.innerHTML = "Veuillez entrer 2 caractères ou plus";
     small.style.color = "red";
     return false;
   } else {
-    small.innerHTML = "nom valide";
+    small.innerHTML = "Nom valide";
     small.style.color = "green";
     return true;
   }
@@ -122,7 +121,7 @@ const validEmail = function (inputEmail) {
     small.style.color = "green";
     return true;
   } else {
-    small.innerHTML = "Adresse électronique non valide";
+    small.innerHTML = "Adresse électronique non conforme";
     small.style.color = "red";
     return false;
   }
@@ -185,7 +184,7 @@ const validquantity = function (inputQuantity) {
     small.style.color = "red";
     return false;
   } else {
-    small.innerHTML = "good";
+    small.innerHTML = "nombre de participation valide";
     small.style.color = "green";
     return true;
   }
@@ -200,11 +199,16 @@ form.checkbox1.addEventListener("change", function () {
  * @param {*} inputCheckBox1
  * @returns
  */
+
 const validcheckbox1 = function (inputCheckBox1) {
-  const small = inputCheckBox1.nextElementSibling;
+  let textCgu = document.getElementById("cgu");
   if (inputCheckBox1.checked) {
+    textCgu.innerHTML = " ";
+
     return true;
   } else {
+    textCgu.innerHTML = " cgu obligatoire";
+    textCgu.style.color = "red";
     return false;
   }
 };
@@ -216,6 +220,7 @@ const validcheckbox1 = function (inputCheckBox1) {
 const checkLocation = function () {
   var result = false;
   const villeLocation = document.getElementsByName("location");
+  let textLoc = document.getElementById("text-loc");
   villeLocation.forEach((loc) => {
     if (loc.checked) {
       result = true;

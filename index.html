@@ -17,7 +17,7 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-        <img alt="logo" src="Logo.png" width="auto" height="auto" />
+        <img alt="logo" src="Logo.png" />
       </div>
       <div class="main-navbar">
         <a href="#" class="active"><span>Accueil</span></a>
@@ -70,7 +70,6 @@
                   name="first"
                 />
                 <small></small>
-
                 <br />
               </div>
               <div class="formData">
@@ -100,13 +99,12 @@
                 />
                 <small></small>
                 <br />
-                <small></small>
               </div>
               <div class="formData">
                 <label
-                  >À combien de tournois GameOn avez-vous déjà participé
-                  ?</label
-                ><br />
+                  >À combien de tournois GameOn avez-vous déjà participé?
+                </label>
+                <br />
                 <input
                   type="number"
                   class="text-control"
@@ -186,7 +184,8 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                <small></small>
+                <br />
+                <small id="text-loc"></small>
               </div>
 
               <div class="formData">
@@ -196,10 +195,11 @@
                   id="checkbox1"
                   checked
                 />
-
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
+                  <br />
+                  <small id="cgu"></small>
                 </label>
                 <br />
 
@@ -212,13 +212,11 @@
               </div>
 
               <input
-                class="btn-submit"
+                class="btn-submit button"
                 type="submit"
-                class="button"
                 value="C'est parti"
               />
             </form>
-            <small></small>
           </div>
         </div>
       </div>
@@ -232,9 +230,8 @@
               réservations a été reçue.
             </p>
             <input
-              class="btn-fermer"
+              class="btn-fermer button-fermer"
               type="submit"
-              class="button"
               value="Fermer"
             />
           </div>
